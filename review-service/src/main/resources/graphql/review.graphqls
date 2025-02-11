@@ -1,0 +1,11 @@
+type Review {
+    id: ID!
+    productId: ID!
+    comment: String!
+    rating: Int!
+}
+
+type Product @key(fields: "id") @extends {
+    id: ID! @external
+    reviews: [Review!]!
+}
